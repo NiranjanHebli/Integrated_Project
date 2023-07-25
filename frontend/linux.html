@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Turtle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+   /* Styling for the header */
+    header {
+      background-color: #333;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    /* Styling for the footer */
+    footer {
+      background-color: #333;
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Styling for the buttons */
+    .button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      margin-bottom: 10px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      transition: all 0.5s;
+    }
+
+    /* Add a hover effect for the buttons */
+    .button:hover {
+       background-color: #777;
+       color: white;
+    }
+
+    /* Styling for the input field */
+    #d1 {
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    /* Styling for output section */
+    #output {
+      border: 1px solid #333;
+      padding: 15px;
+      width: 50%;
+      margin: 50px auto;
+      height: 200px;
+      font-size: 16px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Linux Buddy</h1>
+  </header>
+
+  <div class="button-stack" style="text-align: center;">
+    <a href="https://16.171.138.232:4200" class="button">Launch your Linux in Web</a>
+    <input id="d1" name="q" />
+    <button class="button" onclick="function1()">Run any Linux command</button>
+  </div>
+  
+  <div id="output">Output</div>
+
+  <footer>
+    <p>Copywrite @ Team Turtle 2023.</p>
+  </footer>
+
+  <script>
+    function function1() {
+        var cmd = document.getElementById("d1").value;
+        var xhr = new XMLHttpRequest();
+        console.log(cmd);
+        xhr.open("GET", "http://16.171.138.232/cgi-bin/linux.py?q=" + cmd);
+        xhr.send();
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4){
+                document.getElementById("output").innerHTML=this.responseText;
+            }
+        }
+    }
+
+  </script>
+
+</body>
+</html>

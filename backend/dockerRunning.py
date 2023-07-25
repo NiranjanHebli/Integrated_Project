@@ -6,7 +6,7 @@ print()
 import subprocess
 import cgi
 
-cmd = "sudo docker ps -a"
+cmd = "sudo docker ps"
 output = subprocess.getoutput(cmd)
 
 print("""
@@ -46,7 +46,7 @@ print("""
 """)
 
 # Print Header
-print("<div class='header'>Docker All Instances</div>")
+print("<div class='header'>Docker Running Instances</div>")
 
 # Output Textbox
 print("<textarea class='output' readonly>{}</textarea>".format(output))

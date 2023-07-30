@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Start Instance</title>
+  <title>Launch Container</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -73,7 +73,7 @@
 
   <div class="button-stack" style="text-align: center;">
     Name of your Container: <input id="d1" name="Name" />
-    <button class="button" onclick="function1()">Start Instance</button>
+    <button class="button" onclick="function1()">Launch Container</button>
   </div>
   
   <div id="output">Output</div>
@@ -87,7 +87,7 @@
         var Name = document.getElementById("d1").value;
         var xhr = new XMLHttpRequest();
         console.log(Name);
-        xhr.open("GET", "http://16.171.138.232/cgi-bin/dockerStart.py?name=" + Name);
+        xhr.open("GET", "http://13.51.158.249/cgi-bin/dockerStart.py?name=" + Name);
         xhr.send();
         xhr.onreadystatechange = function(){
             if(this.readyState == 4){

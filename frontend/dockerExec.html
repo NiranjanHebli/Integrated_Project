@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Run Command Inside Instance</title>
+  <title>Run Command Inside Container</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -90,7 +90,7 @@
         var xhr = new XMLHttpRequest();
         console.log(Name);
         console.log(Image);
-        xhr.open("GET", "http://16.171.138.232/cgi-bin/dockerExec.py?name=" + Name + " " + cmd);
+        xhr.open("GET", "http://13.51.158.249/cgi-bin/dockerExec.py?name=" + Name + " " + cmd);
         xhr.send();
         xhr.onreadystatechange = function(){
             if(this.readyState == 4){

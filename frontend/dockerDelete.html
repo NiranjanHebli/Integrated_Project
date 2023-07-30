@@ -73,7 +73,7 @@
 
   <div class="button-stack" style="text-align: center;">
     Name of your Container: <input id="d1" name="Name" />
-    <button class="button" onclick="function1()">Remove Instance</button>
+    <button class="button" onclick="function1()">Remove Container</button>
   </div>
   
   <div id="output">Output</div>
@@ -87,7 +87,7 @@
         var Name = document.getElementById("d1").value;
         var xhr = new XMLHttpRequest();
         console.log(Name);
-        xhr.open("GET", "http://16.171.138.232/cgi-bin/dockerDelete.py?name=" + Name);
+        xhr.open("GET", "http://13.51.158.249/cgi-bin/dockerDelete.py?name=" + Name);
         xhr.send();
         xhr.onreadystatechange = function(){
             if(this.readyState == 4){
